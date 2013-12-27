@@ -91,7 +91,7 @@ class MY_Controller extends CI_Controller {
 			$data = $this->_assets[ $key ];
 			$data[ 1 ][ ] = '/application/controllers/system/assets/js/script.js';
 
-			$path = 'application/controllers/' . $ci->router->class . '/assets/js/script.js';
+			$path = 'application/controllers/' . strtolower( substr( $ci->router->class, 0, strpos( $ci->router->class, '_' ) ) ) . '/assets/js/script.js';
 			if ( file_exists( FCPATH . $path ) == true && is_file( FCPATH . $path ) == true ) {
 				$data[ 2 ][ ] = '/' . $path;
 			}

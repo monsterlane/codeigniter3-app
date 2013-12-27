@@ -9,7 +9,17 @@
 </head>
 <body>
 
-<?=$page_content?>
+<article>
+	<header>
+		<hgroup>
+			<h1 id="appHeaderText">Header</h1>
+		</hgroup>
+	</header>
+
+	<section>
+		<?=$page_content?>
+	</section>
+</article>
 
 <?=$page_js?>
 <script type="text/javascript">

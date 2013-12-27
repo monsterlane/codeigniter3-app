@@ -58,7 +58,7 @@ class MY_Loader extends CI_Loader {
 		$last_mod = 0;
 
 		foreach ( $files as $file ) {
-			if ( !$mtime = @filemtime( $_SERVER[ 'DOCUMENT_ROOT' ] . $file ) ) {
+			if ( !$mtime = @filemtime( '.' . $file ) ) {
 				$mtime = time( );
 			}
 
@@ -175,6 +175,7 @@ class MY_Loader extends CI_Loader {
 
 		$icon = $this->_favicon( );
 		$meta = $this->_meta_tags( $ci->get_meta_tags( ) );
+		$module = ucfirst( substr( $ci->router->class, 0, strpos( $ci->router->class, '_' ) ) ) . 'Module';
 
 		if ( $ci->config->item( 'cache_assets' ) === true ) {
 			$css = $this->_check_cache( 'css', $ci->get_includes( 'css' ) );
@@ -191,7 +192,7 @@ class MY_Loader extends CI_Loader {
 			'page_meta' => $meta,
 			'page_css' => $css,
 			'page_js' => $js,
-			'page_module' => ucfirst( $ci->router->class ) . 'Module',
+			'page_module' => $module,
 			'page_nav' => true,
 			'page_section' => $ci->uri->segment( 1 ),
 			'page_tab' => $ci->uri->segment( 2 ),
