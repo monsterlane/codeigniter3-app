@@ -1,6 +1,8 @@
 <?php defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
-class Welcome extends MY_Controller {
+require_once( APPPATH . 'controllers/system/System.php' );
+
+class Welcome extends System_Controller {
 	/* internal methods */
 
 	protected function _includes( ) {
@@ -18,6 +20,7 @@ class Welcome extends MY_Controller {
 			'page_title' => 'Welcome',
 		);
 
+		// load a page (system document) with this controllers message view as the main content
 		$this->load->page( 'message', $data );
 	}
 }

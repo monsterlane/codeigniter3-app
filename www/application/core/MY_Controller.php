@@ -1,6 +1,7 @@
 <?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 
 class MY_Controller extends CI_Controller {
+	protected $_meta;
 	protected $_assets;
 
 	public function __construct( ) {
@@ -14,25 +15,36 @@ class MY_Controller extends CI_Controller {
 			$this->db->save_queries = false;
 		}
 
-		$this->_assets = array(
-			'css' => array( ),
-			'js' => array( ),
-		);
+		$this->_meta = array( );
+		$this->_meta_tags( );
 
+		$this->_assets = array( 'css' => array( ), 'js' => array( ) );
 		$this->_includes( );
 	}
 
-	protected function _includes( ) {
-		$options = array( 'group' => 1 );
+	/**
+	 * Method: _meta_tags
+	 * Placeholder method, controllers are expected to overload (system controller defines)
+	 */
 
-		$this->_include( 'reset.css', $options );
-		$this->_include( 'style.css', $options );
+	protected function _meta_tags( ) { }
 
-		$this->_include( 'jquery.ui.min.js', $options );
-		$this->_include( 'app.js', $options );
-		$this->_include( 'app.conduit.js', $options );
-		$this->_include( 'app.module.js', $options );
+	/**
+	 * Method: _meta_tag
+	 * @param {String} $name
+	 * @param {String} $value
+	 */
+
+	protected function _meta( $name, $value ) {
+		$this->_meta[ $name ] = $value;
 	}
+
+	/**
+	 * Method: _includes
+	 * Placeholder method, controllers are expected to overload (system controller defines)
+	 */
+
+	protected function _includes( ) { }
 
 	/**
 	 * Method: _include
@@ -59,6 +71,15 @@ class MY_Controller extends CI_Controller {
 				$this->_assets[ $key ][ $group ][ ] = $web_path;
 			}
 		}
+	}
+
+	/**
+	 * Method: get_meta_tags
+	 * Returns the meta tags array
+	 */
+
+	public function get_meta_tags( ) {
+		return $this->_meta;
 	}
 
 	/**

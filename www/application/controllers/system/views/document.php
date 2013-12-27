@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title><?=$page_title?></title>
-	<link rel="shortcut icon" href="/favicon.ico" />
 	<meta charset="utf-8" />
+	<title><?=$page_title?></title>
+	<?=$page_icon?>
+	<?=$page_meta?>
 	<?=$page_css?>
 </head>
 <body>
 
-<div id="container">
 <?=$page_content?>
-</div>
 
 <?=$page_js?>
 

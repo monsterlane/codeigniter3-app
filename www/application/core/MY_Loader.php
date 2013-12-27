@@ -14,6 +14,39 @@ class MY_Loader extends CI_Loader {
 	}
 
 	/**
+	 * Method: _favicon
+	 * @return {String/null}
+	 * Returns a path if a favicon is found in the root directory or null if not
+	 */
+
+	private function _favicon( ) {
+		$icon = null;
+
+		if ( file_exists( FCPATH . 'favicon.ico' ) == true && is_file( FCPATH . 'favicon.ico' ) == true ) {
+			$icon = '<link rel="shortcut icon" href="/favicon.ico" />';
+		}
+
+		return $icon;
+	}
+
+	/**
+	 * Method: _meta_tags
+	 * @param {Array} $data
+	 * @return {String}
+	 * Returns a string of meta tags
+	 */
+
+	private function _meta_tags( $data = array( ) ) {
+		$result = array( );
+
+		foreach ( $data as $name => $value ) {
+			$result[ ] = '<meta name="' . form_prep( $name ) . '" content="' . form_prep( $value ) . '" />';
+		}
+
+		return implode( "\n", $result );
+	}
+
+	/**
 	 * Method: _last_modified
 	 * @param {Array} $files
 	 * @return {DateTime}
@@ -139,7 +172,8 @@ class MY_Loader extends CI_Loader {
 	public function page( $view, $vars = array( ), $return = false ) {
 		$ci =& get_instance( );
 
-		$meta = array( );
+		$icon = $this->_favicon( );
+		$meta = $this->_meta_tags( $ci->get_meta_tags( ) );
 
 		if ( $ci->config->item( 'cache_assets' ) === true ) {
 			$css = $this->_check_cache( 'css', $ci->get_includes( 'css' ) );
@@ -151,8 +185,9 @@ class MY_Loader extends CI_Loader {
 		}
 
 		$data = array_merge( array(
+			'page_icon' => $icon,
 			'page_title' => null,
-			'page_meta' => null,
+			'page_meta' => $meta,
 			'page_css' => $css,
 			'page_js' => $js,
 			'page_nav' => true,
