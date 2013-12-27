@@ -15,6 +15,7 @@ This project is meant as a starting point for modular high performance web and S
 * Database logging of PHP errors (post controller construct)
 * New methods for the output class (images with modified headers)
 * Shorthand methods for the output class (string, json, appended output)
+* Alternative html regex for the output class with better support for inline-block layouts
 * Additional form validation methods (date)
 * Additional array helpers
 * Additional file helper
