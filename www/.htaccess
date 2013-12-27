@@ -23,6 +23,10 @@ RewriteBase /
 #RewriteCond %{SERVER_PORT} 80
 #RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# fix asset paths
+RewriteRule ^([^/]+)/assets/(.*)$ application/controllers/$1/assets/$2 [L]
+
+# if the url isnt a real file pass to ci
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L]

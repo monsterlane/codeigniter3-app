@@ -11,8 +11,7 @@ ehthumbs.db
 Thumbs.db
 
 #project files
-www/index.php
-www/system
-www/application/third_party/minify
-www/files/cache/*.css
-www/files/cache/*.js
+/system
+/www/application/third_party/minify
+/www/files/cache/*.css
+/www/files/cache/*.js

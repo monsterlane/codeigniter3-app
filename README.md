@@ -29,7 +29,7 @@ This project is meant as a starting point for modular high performance web and S
 
 1. Download this package, extract and set your document root to the www folder.
 2. Download CI3dev: https://github.com/EllisLab/CodeIgniter/
-3. Put the system folder and index.php from CI3 into the www folder
+3. Put the system folder from CI in the folder containing www and docs
 4. Download minify: http://code.google.com/p/minify/
 5. Extract minify to application/third_part/minify
 6. If you are using a database, fill in your credentials, import the schema file in the docs folder and enable hooks

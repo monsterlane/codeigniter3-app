@@ -90,9 +90,8 @@ class MY_Loader extends CI_Loader {
 
 		foreach ( $assets as $group => $files ) {
 			foreach ( $files as $file ) {
-				if ( $group > 0 ) {
-					$file .= '?t=' . @filemtime( '.' . $file );
-				}
+				if ( $group > 0 ) $file .= '?t=' . @filemtime( '.' . $file );
+				$file = str_replace( '/application/controllers', '', $file );
 
 				$result[ ] = sprintf( $html, $file );
 			}
