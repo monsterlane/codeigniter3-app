@@ -14,5 +14,5 @@ Thumbs.db
 www/index.php
 www/system
 www/application/third_party/minify
-www/application/cache/*.css
-www/application/cache/*.js
+www/files/cache/*.css
+www/files/cache/*.js

@@ -124,9 +124,9 @@ class MY_Loader extends CI_Loader {
 
 		foreach ( $assets as $group => $files ) {
 			if ( $group > 0 ) {
-				$cache_name = ( $group > 1 ) ? $ci->router->class : 'system';
+				$cache_name = ( $group > 1 ) ? strtolower( substr( $ci->router->class, 0, strpos( $ci->router->class, '_' ) ) ) : 'system';
 				$cache_file = $cache_name . '.' . $this->_last_modified( $files ) . '.min.' . $type;
-				$cache_path = ( $ci->config->item( 'cache_path' ).'' == '' ) ? APPPATH . 'cache/' : $ci->config->item( 'cache_path' );
+				$cache_path = $ci->config->item( 'cache_file_path' );
 
 				if ( file_exists( $cache_path . $cache_file ) == false ) {
 					$old = glob( $cache_path . $cache_name . '.*.min.' . $type );
@@ -150,7 +150,7 @@ class MY_Loader extends CI_Loader {
 					file_put_contents( $cache_path . $cache_file, implode( "\n", $data ) );
 				}
 
-				$result[ ] = sprintf( $html, substr( $cache_path, strpos( $cache_path, '/www/' ) + 4 ) . $cache_file );
+				$result[ ] = sprintf( $html, $ci->config->item( 'cache_web_path' ) . $cache_file );
 			}
 			else {
 				foreach ( $files as $file ) {
