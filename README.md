@@ -1,6 +1,6 @@
 ## codeigniter 3dev app shell
 
-This project is meant as a starting point for high performance web and SAAS apps. If you use CSS sprite maps and the included asset caching, your site will meet every requirement of Yahoo's best practices for loading speed. See more here: http://developer.yahoo.com/performance/rules.html
+This project is meant as a starting point for modular high performance web and SAAS apps. If you use CSS sprite maps and the included asset caching, your site will meet every requirement of Yahoo's best practices for loading speed. See more here: http://developer.yahoo.com/performance/rules.html
 
 ## features
 
@@ -30,7 +30,8 @@ This project is meant as a starting point for high performance web and SAAS apps
 2. Download CI3dev: https://github.com/EllisLab/CodeIgniter/
 3. Put the system folder and index.php from CI3 into the www folder
 4. Download minify: http://code.google.com/p/minify/
-5. Extract to application/third_part/minify
+5. Extract minify to application/third_part/minify
+6. If you are using a database, fill in your credentials, import the schema file in the docs folder and enable hooks
 
 ## license
 
