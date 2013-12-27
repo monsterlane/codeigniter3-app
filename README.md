@@ -18,7 +18,7 @@ This project is meant as a starting point for modular high performance web and S
 * Additional form validation methods (date)
 * Additional array helpers
 * Additional file helper
-* Additioanl security helpers
+* Additional security helpers
 * Upload helper
 * Client side JS tools- modules, conduits, error checking
 * Includes latest jQuery (1.10.2) http://jquery.com/
