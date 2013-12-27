@@ -1,5 +1,10 @@
 <?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 
+/**
+ * Method: get_dir_size
+ * Returns a directory size in a readable format
+ */
+
 function get_dir_size( $path, $unit = 'm' ) {
     $path = trim( $path );
 

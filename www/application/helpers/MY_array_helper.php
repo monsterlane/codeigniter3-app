@@ -1,5 +1,12 @@
 <?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 
+/**
+ * Function: trim_array
+ * @param {Array} $arr
+ * @return {Array}
+ * Returns the array with all values trimmed
+ */
+
 function trim_array( $arr ) {
 	foreach ( $arr as $k => $v ) {
 		if ( is_scalar( $v ) ) {
@@ -16,6 +23,13 @@ function trim_array( $arr ) {
 	return $arr;
 }
 
+/**
+ * Function: merge_array
+ * @param {Array} 1-n
+ * @return {Array}
+ * Mimics array_merge but checks for valid arrays
+ */
+
 function merge_array( ) {
 	$args = func_get_args( );
 	$result = array( );
@@ -29,6 +43,13 @@ function merge_array( ) {
 	return $result;
 }
 
+/**
+ * Function: clean_array
+ * @param {Array} $arr
+ * @return {Array}
+ * Cleans weird values from jQuery when posting JSON
+ */
+
 function clean_array( $arr ) {
 	if ( !is_array( $arr ) ) $arr = array( );
 
@@ -40,6 +61,13 @@ function clean_array( $arr ) {
 	return $arr;
 }
 
+/**
+ * Function: extract_array
+ * @param {Array} $arr
+ * @param {Array} $keys
+ * Returns an array with $keys from $arr
+ */
+
 function extract_array( $arr, $keys ) {
 	if ( !is_array( $arr ) ) $arr = array( );
 	$result = array( );
@@ -48,10 +76,20 @@ function extract_array( $arr, $keys ) {
 		if ( in_array( $key, $keys ) ) {
 			$result[ $key ] = $val;
 		}
+		else {
+			$result[ $key ] = null;
+		}
 	}
 
 	return $result;
 }
+
+/**
+ * Function: array_changes
+ * @param {Array} $old
+ * @param {Array} $new
+ * Returns the diff between two arrays
+ */
 
 function array_changes( $old, $new ) {
 	$result = array(

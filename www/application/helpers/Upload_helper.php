@@ -1,5 +1,10 @@
 <?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 
+/**
+ * Function get_upload_max_filesize
+ * Returns the max upload file size in a readable format
+ */
+
 function get_upload_max_filesize( ) {
 	$value = ini_get( 'upload_max_filesize' );
 
