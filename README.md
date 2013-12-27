@@ -33,6 +33,10 @@ This project is meant as a starting point for modular high performance web and S
 5. Extract minify to application/third_part/minify
 6. If you are using a database, fill in your credentials, import the schema file in the docs folder and enable hooks
 
+## faq
+
+* If you get an error about the Header command in the root htaccess file, ensure the apache module 'headers' is enabled
+
 ## license
 
 (The MIT License) Copyright (c) 2013 Jonathan Down
