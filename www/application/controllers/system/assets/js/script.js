@@ -17,6 +17,9 @@ app.extend( app.SystemModule, app.Module );
 app.SystemModule.prototype.bindEventListeners = function( ) {
 	var self = this;
 
+	// put any binding you want on every page in here
+	// ex: a search form at the top of every page
+
 	$( '#appHeaderText' ).on( 'click', function( aEvent ) {
 		aEvent.preventDefault( );
 		self.handleTitleClick( this );
@@ -29,5 +32,6 @@ app.SystemModule.prototype.bindEventListeners = function( ) {
  */
 
 app.SystemModule.prototype.handleTitleClick = function( aElement ) {
-	alert( aElement.innerHTML );
+	// see app.module for description of alert method
+	self.alert( aElement.innerHTML );
 };
