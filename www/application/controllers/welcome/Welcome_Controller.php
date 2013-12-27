@@ -1,17 +1,8 @@
 <?php defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 
-require_once( APPPATH . 'controllers/system/System.php' );
+require_once( APPPATH . 'controllers/system/System_Controller.php' );
 
-class Welcome extends System_Controller {
-	/* internal methods */
-
-	protected function _includes( ) {
-		// call the parent method
-		parent::_includes( );
-
-		// include controller level assets
-	}
-
+class Welcome_Controller extends System_Controller {
 	/* public routes */
 
 	public function index( ) {

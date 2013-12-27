@@ -1,7 +1,5 @@
 <?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 
-$config['maintenance_mode'] = false;
-
 $config['app_name'] = 'My App';
 $config['app_author'] = 'John Doe';
 $config['app_description'] = 'My App';

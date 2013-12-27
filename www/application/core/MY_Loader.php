@@ -9,8 +9,9 @@ class MY_Loader extends CI_Loader {
 
 		// add hmvc style view paths
 		$ci =& get_instance( );
+		$path = strtolower( substr( $ci->router->class, 0, strpos( $ci->router->class, '_' ) ) );
 		$this->_ci_view_paths[ APPPATH . 'controllers/' ] = true;
-		$this->_ci_view_paths[ APPPATH . 'controllers/' . $ci->router->class . '/views/' ] = true;
+		$this->_ci_view_paths[ APPPATH . 'controllers/' . $path . '/views/' ] = true;
 	}
 
 	/**

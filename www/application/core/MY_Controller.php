@@ -7,10 +7,6 @@ class MY_Controller extends CI_Controller {
 	public function __construct( ) {
 		parent::__construct( );
 
-		if ( $this->config->item( 'maintenance_mode' ) == true && $this->router->class != 'maintenance_controller' ) {
-			redirect( 'maintenance' );
-		}
-
 		if ( ENVIRONMENT != 'development' ) {
 			$this->db->save_queries = false;
 		}
