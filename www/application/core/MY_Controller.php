@@ -60,7 +60,7 @@ class MY_Controller extends CI_Controller {
 		}
 		else {
 			$group = ( array_key_exists( 'group', $options ) == true ) ? (int)$options[ 'group' ] : 2;
-			$web_path = ( $group > 1 ) ? '/application/controllers/' . $this->router->class . '/assets/' . $key . '/' . $file : '/application/controllers/system/assets/' . $key . '/' . $file;
+			$web_path = ( $group > 1 ) ? '/application/controllers/' . strtolower( substr( $ci->router->class, 0, strpos( $ci->router->class, '_' ) ) ) . '/assets/' . $key . '/' . $file : '/application/controllers/system/assets/' . $key . '/' . $file;
 			$file_path = realpath( '.' . $web_path );
 
 			if ( $file_path !== false && file_exists( $file_path ) == true && is_file( $file_path ) == true ) {
