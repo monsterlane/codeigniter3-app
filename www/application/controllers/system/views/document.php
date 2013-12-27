@@ -12,7 +12,7 @@
 <article>
 	<header>
 		<hgroup>
-			<h1 id="appHeaderText">Header</h1>
+			<h1 id="appHeaderText">System Header</h1>
 		</hgroup>
 	</header>
 

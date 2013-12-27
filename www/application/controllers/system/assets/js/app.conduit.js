@@ -49,9 +49,6 @@ app.Conduit.prototype.ajax = function( aData ) {
 			if ( aData.checkResponse == false || ( r = self.parse( aResponse ) ) !== false ) {
 				ocb( r );
 			}
-			else if ( aResponse.indexOf( '<title>Login</title>' ) !== -1 ) {
-				window.location = '/login';
-			}
 			else {
 				self.getParent( ).alert( 'An error has occured. Please refresh the page, if the problem persits please contact <a href="mailto:support@domain.com">support</a>.' );
 			}

@@ -2,16 +2,15 @@
 
 require_once( APPPATH . 'controllers/system/System_Controller.php' );
 
-class Welcome_Controller extends System_Controller {
+class Example_Controller extends System_Controller {
 	/* public routes */
 
 	public function index( ) {
 		$data = array(
-			'page_title' => 'Welcome',
+			'page_title' => 'Examples',
 		);
 
-		// load a page (system document) with this controllers message view as the main content
-		$this->load->page( 'message', $data );
+		$this->load->page( 'examples', $data );
 	}
 }
 

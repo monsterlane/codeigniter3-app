@@ -53,7 +53,7 @@ class MY_Router extends CI_Router {
 		}
 
 		if ( is_dir( APPPATH . 'controllers/' . $segments[ 0 ] ) ) {
-			$this->set_directory( array_shift( $segments ) );
+			$this->set_directory( $segments[ 0 ] );
 
 			if ( count( $segments ) > 0 ) {
 				$test = ucfirst( $this->translate_uri_dashes === TRUE ? str_replace( '-', '_', $segments[ 0 ] ) : $segments[ 0 ] );
