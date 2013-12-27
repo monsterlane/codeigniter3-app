@@ -9,3 +9,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#project files
+www/index.php
+www/system
+www/application/third_party/minify
+www/application/cache/*.css
+www/application/cache/*.js

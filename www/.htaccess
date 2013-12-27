@@ -1,0 +1,28 @@
+SetEnv CI_ENV "development"
+
+Header unset Pragma
+FileETag None
+Header unset ETag
+
+<FilesMatch "\.(jpg|jpeg|png|gif)$">
+	Header set Cache-Control "max-age=0, public, no-transform, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(css|js)$">
+	Header set Cache-Control "max-age=0, public, no-transform, must-revalidate"
+</FilesMatch>
+
+<FilesMatch "\.(php|html)$">
+	Header set Cache-Control "max-age=0, public, no-transform, must-revalidate"
+</FilesMatch>
+
+RewriteEngine On
+RewriteBase /
+
+# uncomment if you want to force https
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
