@@ -22,9 +22,8 @@ class System_Controller extends MY_Controller {
 		$options = array( 'group' => 1 );
 
 		$this->_include( 'reset.css', $options );
-		$this->_include( 'style.css', $options );
 
-		$this->_include( 'jquery.ui.min.js', $options );
+		$this->_include( 'jquery.min.js', $options );
 		$this->_include( 'app.js', $options );
 		$this->_include( 'app.conduit.js', $options );
 		$this->_include( 'app.module.js', $options );

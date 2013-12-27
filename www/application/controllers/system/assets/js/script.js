@@ -1,20 +1,20 @@
 
 /*
 ===============================================================================
-Module: Welcome
+Module: System
 ===============================================================================
 */
 
 if ( window.hasOwnProperty( 'app' ) == false ) window.app = { };
 
-app.WelcomeModule = function( ) { };
-app.extend( app.WelcomeModule, app.SystemModule );
+app.SystemModule = function( ) { };
+app.extend( app.SystemModule, app.Module );
 
 /**
  * Method: bindMainFormEventListeners
  */
 
-app.WelcomeModule.prototype.bindEventListeners = function( ) {
+app.SystemModule.prototype.bindEventListeners = function( ) {
 	var self = this;
 
 };

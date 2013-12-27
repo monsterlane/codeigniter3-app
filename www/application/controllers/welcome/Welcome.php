@@ -10,7 +10,6 @@ class Welcome extends System_Controller {
 		parent::_includes( );
 
 		// include controller level assets
-		$this->_include( 'style.css' );
 	}
 
 	/* public routes */

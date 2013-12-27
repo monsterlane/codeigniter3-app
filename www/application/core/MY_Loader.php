@@ -190,6 +190,7 @@ class MY_Loader extends CI_Loader {
 			'page_meta' => $meta,
 			'page_css' => $css,
 			'page_js' => $js,
+			'page_module' => ucfirst( $ci->router->class ) . 'Module',
 			'page_nav' => true,
 			'page_section' => $ci->uri->segment( 1 ),
 			'page_tab' => $ci->uri->segment( 2 ),

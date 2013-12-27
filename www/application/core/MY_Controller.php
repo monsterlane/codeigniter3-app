@@ -89,7 +89,22 @@ class MY_Controller extends CI_Controller {
 	 */
 
 	public function get_includes( $key ) {
-		return ( array_key_exists( $key, $this->_assets ) == true ) ? $this->_assets[ $key ] : array( );
+		$ci =& get_instance( );
+
+		if ( array_key_exists( $key, $this->_assets ) == true ) {
+			$data = $this->_assets[ $key ];
+			$data[ 1 ][ ] = '/application/controllers/system/assets/js/script.js';
+
+			$path = 'application/controllers/' . $ci->router->class . '/assets/js/script.js';
+			if ( file_exists( FCPATH . $path ) == true && is_file( FCPATH . $path ) == true ) {
+				$data[ 2 ][ ] = '/' . $path;
+			}
+		}
+		else {
+			$data = array( );
+		}
+
+		return $data;
 	}
 }
 
