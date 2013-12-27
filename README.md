@@ -1,5 +1,7 @@
 ## codeigniter 3dev app shell
 
+This project is meant as a starting point for high performance web and SAAS apps. If you use CSS sprite maps and the included asset caching, your site will meet every requirement of Yahoo's best practices for loading speed. See more here: http://developer.yahoo.com/performance/rules.html
+
 ## features
 
 * HMVC like folder structure (controllers are in folders, views and assets are in controller folders, models are all in one folder for convenience)
