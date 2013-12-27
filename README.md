@@ -2,7 +2,7 @@
 
 ## features
 
-* HMVC like folder structure (controllers are in folders, views and assests are in controller folders, models are all in one folder for convenience)
+* HMVC like folder structure (controllers are in folders, views and assets are in controller folders, models are all in one folder for convenience)
 * Automatic client side includes (controller/assets/js/script.js and controller/assets/css/style.css)
 * Automatic client side module binding (with inheritance)
 * Automatic css/js merging/minify/caching by group (system, controller level)
@@ -18,6 +18,9 @@
 * Additional file helper
 * Additioanl security helpers
 * Upload helper
+* Client side JS tools- modules, conduits, error checking
+* Includes latest jQuery (1.10.2) http://jquery.com/
+* Includes modified normalize.css (2.1.3) http://necolas.github.io/normalize.css/
 
 ## install
 
