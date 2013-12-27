@@ -186,6 +186,11 @@ class MY_Loader extends CI_Loader {
 			$js = $this->_block_cache( 'js', $ci->get_includes( 'js' ) );
 		}
 
+		// defaults passed into the system template, you can add new flags here (like page_nav)
+		// page_section and page_tab can be used in views to highlight ui elements
+		// page_section is the controller (folder name)
+		// page_tab is the controller's method being called
+
 		$data = array_merge( array(
 			'page_icon' => $icon,
 			'page_title' => null,

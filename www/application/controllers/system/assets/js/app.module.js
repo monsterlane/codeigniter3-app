@@ -74,6 +74,11 @@ app.Module.prototype.enableButton = function( aButton ) {
 
 /**
  * Method: alert
+ * The purpose of this method is to allow you to use a module method as a bridge
+ * to other notification libraries (jqueryui, bootstrap, etc) all notifications
+ * should be called through the bridge, if you ever change the plugin you only
+ * update this method. you can add more methods like this for confirm boxes,
+ * popup forms, etc
  * @param {String} aMessage
  */
 
